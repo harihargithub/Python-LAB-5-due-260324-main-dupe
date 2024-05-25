@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Car Price Prediction</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: rgb(199, 249, 185);
+        }
+
+        .container {
+            max-height: 80vh;
+            /* Adjust this value to change the maximum height of the container */
+            overflow-y: auto;
+            /* Add a scrollbar if the content exceeds the maximum height */
+            width: 50%;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input {
+            background-color: rgb(234, 248, 181) !important;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 2s;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="my-4">
+            <img src="/static/logo.jpg" alt="Logo">
+        </h1>
+        <h1 class="my-4">Car Price Prediction</h1>
+        <form action="/predict" method="post">
+            <div class="form-group">
+                <label for="present_price">Present Price:</label>
+                <input type="text" id="present_price" name="present_price" class="form-control" placeholder="eg. 12.34">
+            </div>
+            <div class="form-group">
+                <label for="kms_driven">Kms Driven:</label>
+                <input type="text" id="kms_driven" name="kms_driven" class="form-control" placeholder="eg. 123456">
+            </div>
+            <div class="form-group">
+                <label for="fuel_type">Fuel Type:</label>
+                <input type="text" id="fuel_type" name="fuel_type" class="form-control"
+                    placeholder="eg. 0 for CNG, 1 for Diesel & 2 for Petrol">
+            </div>
+            <div class="form-group">
+                <label for="seller_type">Seller Type:</label>
+                <input type="text" id="seller_type" name="seller_type" class="form-control"
+                    placeholder="eg. 0 for Dealer & 1 for Individual">
+            </div>
+            <div class="form-group">
+                <label for="transmission">Transmission:</label>
+                <input type="text" id="transmission" name="transmission" class="form-control"
+                    placeholder="eg. 0 for Automatic and 1 for Manual">
+            </div>
+            <div class="form-group">
+                <label for="owner">Owner:</label>
+                <input type="text" id="owner" name="owner" class="form-control" placeholder="Input values: 0 or 1 or 3">
+            </div>
+            <div class="form-group">
+                <label for="age_of_the_car">Age of the Car:</label>
+                <input type="text" id="age_of_the_car" name="age_of_the_car" class="form-control" placeholder="eg. 12">
+            </div>
+            <div class="form-group text-center">
+                <button type="submit" class="btn btn-primary">Predict</button>
+            </div>
+        </form>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <div id="flashed-messages" class="alert alert-info text-center">
+            {% for message in messages %}
+            <h2 class="fade-in">{{ message }}</h2>
+            {% endfor %}
+        </div>
+
+        {% endif %}
+        {% endwith %}
+    </div>
+</body>
+
+<script>
+    // Scroll to the flashed messages when a message is flashed
+    document.addEventListener('DOMContentLoaded', (event) => {
+        console.log('DOM fully loaded and parsed');
+        setTimeout(function () {
+            var message = '{{ message }}';
+            console.log('Message:', message);
+            if (message) {
+                console.log('Scrolling to message');
+                document.getElementById('flashed-messages').scrollIntoView();
+            }
+        }, 100); // Delay of 100ms
+    });
+</script>
+
+</html>

@@ -1,0 +1,88 @@
+Descriptive statistics for Selling_Price:
+count    299.000000
+mean       4.589632
+std        4.984240
+min        0.100000
+25%        0.850000
+50%        3.510000
+75%        6.000000
+max       35.000000
+Name: Selling_Price, dtype: float64
+
+Descriptive statistics for Present_Price:
+count    299.000000
+mean       7.541037
+std        8.567887
+min        0.320000
+25%        1.200000
+50%        6.100000
+75%        9.840000
+max       92.600000
+Name: Present_Price, dtype: float64
+
+Descriptive statistics for Kms_Driven:
+count       299.000000
+mean      36916.752508
+std       39015.170352
+min         500.000000
+25%       15000.000000
+50%       32000.000000
+75%       48883.500000
+max      500000.000000
+Name: Kms_Driven, dtype: float64
+
+Descriptive statistics for Fuel_Type:
+count    299.000000
+mean       1.792642
+std        0.422297
+min        0.000000
+25%        2.000000
+50%        2.000000
+75%        2.000000
+max        2.000000
+Name: Fuel_Type, dtype: float64
+
+Descriptive statistics for Seller_Type:
+count    299.000000
+mean       0.354515
+std        0.479168
+min        0.000000
+25%        0.000000
+50%        0.000000
+75%        1.000000
+max        1.000000
+Name: Seller_Type, dtype: float64
+
+Descriptive statistics for Transmission:
+count    299.000000
+mean       0.869565
+std        0.337346
+min        0.000000
+25%        1.000000
+50%        1.000000
+75%        1.000000
+max        1.000000
+Name: Transmission, dtype: float64
+
+Descriptive statistics for Owner:
+count    299.000000
+mean       0.043478
+std        0.248720
+min        0.000000
+25%        0.000000
+50%        0.000000
+75%        0.000000
+max        3.000000
+Name: Owner, dtype: float64
+
+Descriptive statistics for age_of_the_car:
+count    299.000000
+mean      10.384615
+std        2.896868
+min        6.000000
+25%        8.000000
+50%       10.000000
+75%       12.000000
+max       21.000000
+Name: age_of_the_car, dtype: float64
+
